@@ -1,0 +1,19 @@
+.event-list {
+    margin: 0 auto;
+    width: 100%;
+    @media all and (min-width: 576px) {
+        width: calc(3 * 180px);
+    }
+    @media all and (min-width: 768px) {
+        width: calc(3 * 220px);
+    }
+    @media all and (min-width: 992px) {
+        width: calc(4 * 220px);
+    }
+    @media all and (min-width: 1200px) {
+        width: calc(5 * 220px);
+    }
+    @media all and (min-width: 1440px) {
+        width: calc(6 * 220px);
+    }
+}

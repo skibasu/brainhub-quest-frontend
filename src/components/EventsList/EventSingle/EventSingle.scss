@@ -1,0 +1,14 @@
+.event-single {
+    width: 50%;
+
+    @media all and (min-width: 576px) {
+        width: 180px;
+    }
+    @media all and (min-width: 768px) {
+        width: 220px;
+    }
+    &__inner {
+        height: 100%;
+        box-shadow: 2px 2px 34px -21px rgba(66, 68, 90, 1);
+    }
+}

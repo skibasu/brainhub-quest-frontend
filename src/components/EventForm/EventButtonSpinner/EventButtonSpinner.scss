@@ -1,0 +1,10 @@
+.event-button-spinner {
+    min-height: 80px;
+    &__spinner {
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        width: 22px !important;
+        height: 22px !important;
+    }
+}
