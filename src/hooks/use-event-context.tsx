@@ -17,9 +17,9 @@ type IProps = {
 type TStatusModalContext = {
     children?: React.ReactNode
 }
-const EventsModalContext = createContext<IProps>({} as IProps)
+export const EventsContext = createContext<IProps>({} as IProps)
 
-const EventsModalProvider: React.FC<TStatusModalContext> = ({ children }) => {
+const EventsProvider: React.FC<TStatusModalContext> = ({ children }) => {
     const [isSending, setIsSending] = useState<boolean>(false)
     const [errorSending, setErrorSending] = useState<string>("")
     const [isDownloading, setIsDownloading] = useState<boolean>(false)
@@ -29,7 +29,7 @@ const EventsModalProvider: React.FC<TStatusModalContext> = ({ children }) => {
     const [successEventMessage, setSuccessEventMessage] = useState<string>("")
 
     return (
-        <EventsModalContext.Provider
+        <EventsContext.Provider
             value={{
                 isSending,
                 setIsSending,
@@ -46,10 +46,10 @@ const EventsModalProvider: React.FC<TStatusModalContext> = ({ children }) => {
             }}
         >
             {children}
-        </EventsModalContext.Provider>
+        </EventsContext.Provider>
     )
 }
 
-const useEventsContext = () => useContext(EventsModalContext)
+const useEventsContext = () => useContext(EventsContext)
 
-export { EventsModalProvider, useEventsContext }
+export { EventsProvider, useEventsContext }

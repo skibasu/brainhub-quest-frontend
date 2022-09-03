@@ -8,7 +8,7 @@ export interface ISingleEvent {
 }
 const SingleEvent: React.FC<ISingleEvent> = ({ email, name, date }) => {
     return (
-        <article className="event-single px-2 py-2">
+        <article data-testid="single-event" className="event-single px-2 py-2">
             <div className="event-single__inner rounded border border-secondary px-2 py-2 ">
                 <h3>{name}</h3>
                 <p>Event date : {new Date(date).toLocaleDateString("en-US")}</p>

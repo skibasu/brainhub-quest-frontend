@@ -7,7 +7,10 @@ interface IInputError {
 const InputError = ({ message }: IInputError): JSX.Element | null => {
     if (!message) return null
     return (
-        <p className="text-left text-danger pt-2 event-input-error">
+        <p
+            className="text-left text-danger pt-2 event-input-error"
+            data-testid="input-error"
+        >
             {message}
         </p>
     )

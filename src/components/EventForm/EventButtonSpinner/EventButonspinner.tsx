@@ -16,18 +16,21 @@ const Buttonspinner: React.FC<IButtonSpinner> = ({ isLoading }) => {
                 variant="success"
                 type="submit"
                 disabled={isLoading}
+                data-testid="button-submit"
             >
                 Submit
                 {isLoading ? (
-                    <Puff
-                        height="22"
-                        width="22"
-                        radius={1}
-                        color="#FFFFFF"
-                        ariaLabel="puff-loading"
-                        wrapperClass="event-button-spinner__spinner d-flex justify-content-center spinner position-absolute"
-                        visible={true}
-                    />
+                    <div data-testid="puff">
+                        <Puff
+                            height="22"
+                            width="22"
+                            radius={1}
+                            color="#FFFFFF"
+                            ariaLabel="puff-loading"
+                            wrapperClass="event-button-spinner__spinner d-flex justify-content-center spinner position-absolute"
+                            visible={true}
+                        />
+                    </div>
                 ) : null}
             </Button>
             <EventFormErrorMessage />

@@ -2,7 +2,6 @@ import React from "react"
 import { useEventsContext } from "../../../hooks/use-event-context"
 
 const EventErrorMessage = (): JSX.Element | null => {
-    console.log("message")
     const { events, isDownloading, errorDownloading } = useEventsContext()
     return !isDownloading && events.length === 0 && !errorDownloading ? (
         <>
