@@ -2,10 +2,10 @@ import React, { useEffect } from "react"
 import { postEvent } from "../../utils/api/api"
 import Form from "react-bootstrap/Form"
 import { useForm, Controller } from "react-hook-form"
-import ButtonSpinner from "./EventButtonSpinner/EventButonspinner"
+import ButtonSpinner from "./EventButtonSpinner/EventButonSpinner"
 import { yupResolver } from "@hookform/resolvers/yup"
 import EventSchema from "./EventSchema/EventSchema"
-import InputError from "./EventInputError/EventInputError"
+import EventInputError from "./EventInputError/EventInputError"
 import { useEventsContext } from "../../hooks/use-event-context"
 import TimeOut from "../../utils/timeout/timeout"
 import "./EventForm.scss"
@@ -74,6 +74,7 @@ const EventForm: React.FC = () => {
 
     return (
         <Form
+            data-testid="form"
             onSubmit={handleSubmit(onSubmit)}
             className="m-auto event-form px-4  py-5 rounded border border-secondary"
         >
@@ -84,6 +85,7 @@ const EventForm: React.FC = () => {
                     control={control}
                     render={({ field: { onChange, onBlur, value, ref } }) => (
                         <Form.Control
+                            data-testid="email"
                             isInvalid={!!emailError}
                             onBlur={onBlur}
                             onChange={onChange}
@@ -93,7 +95,7 @@ const EventForm: React.FC = () => {
                         />
                     )}
                 />
-                <InputError message={emailError?.message} />
+                <EventInputError message={emailError?.message} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Event Name</Form.Label>
@@ -102,6 +104,7 @@ const EventForm: React.FC = () => {
                     control={control}
                     render={({ field: { onChange, onBlur, value, ref } }) => (
                         <Form.Control
+                            data-testid="name"
                             isInvalid={!!nameError}
                             onBlur={onBlur}
                             onChange={onChange}
@@ -111,7 +114,7 @@ const EventForm: React.FC = () => {
                         />
                     )}
                 />
-                <InputError message={nameError?.message} />
+                <EventInputError message={nameError?.message} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Event Date</Form.Label>
@@ -122,6 +125,7 @@ const EventForm: React.FC = () => {
                     render={({ field: { onChange, onBlur, value, ref } }) => (
                         <Form.Control
                             type="date"
+                            data-testid="time"
                             isInvalid={!!dateError}
                             onBlur={onBlur}
                             onChange={onChange}
@@ -132,7 +136,7 @@ const EventForm: React.FC = () => {
                     )}
                 />
 
-                <InputError message={dateError?.message} />
+                <EventInputError message={dateError?.message} />
             </Form.Group>
             <ButtonSpinner isLoading={isSending} />
         </Form>

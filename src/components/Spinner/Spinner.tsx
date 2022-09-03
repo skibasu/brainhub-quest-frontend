@@ -8,7 +8,10 @@ interface ISpinner {
 const Spinner = ({ isLoading }: ISpinner) => {
     if (isLoading) {
         return (
-            <div className="spinner position-relative w-100">
+            <div
+                className="spinner position-relative w-100"
+                data-testid="spinner-large"
+            >
                 <Puff
                     height="34"
                     width="34"
