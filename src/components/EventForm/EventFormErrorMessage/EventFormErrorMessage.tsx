@@ -12,7 +12,7 @@ const EventFormErrorMessage = ({
         <div className={className ? className : ""}>
             <p
                 data-testid="event-form-error"
-                className="text-error  py-2 text-center m-0"
+                className="text-danger py-2 text-center m-0 text-nowrap"
             >
                 {errorSending}
             </p>
