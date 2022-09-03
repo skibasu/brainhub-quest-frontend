@@ -1,4 +1,16 @@
 .event-form {
     max-width: 450px;
     box-shadow: 2px 2px 34px -21px rgba(66, 68, 90, 1);
+    &__input-wrapper {
+        min-height: 98px;
+    }
+}
+.form-control {
+    &:focus {
+        border-color: #ffc107;
+        box-shadow: 2px 2px 20px -10px rgba(66, 68, 90, 1) !important;
+    }
+    &.in-valid:focus {
+        box-shadow: 2px 2px 20px -10px rgba(66, 68, 90, 1) !important;
+    }
 }

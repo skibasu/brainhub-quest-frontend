@@ -1,15 +1,22 @@
 import React from "react"
 import { useEventsContext } from "../../../hooks/use-event-context"
 
-const EventFormErrorMessage = (): JSX.Element | null => {
+interface IEventFormErrorMessage {
+    className?: string
+}
+const EventFormErrorMessage = ({
+    className,
+}: IEventFormErrorMessage): JSX.Element | null => {
     const { errorSending } = useEventsContext()
     return errorSending ? (
-        <p
-            data-testid="event-form-error"
-            className="text-error  py-3 text-center"
-        >
-            {errorSending}
-        </p>
+        <div className={className ? className : ""}>
+            <p
+                data-testid="event-form-error"
+                className="text-error  py-2 text-center m-0"
+            >
+                {errorSending}
+            </p>
+        </div>
     ) : null
 }
 

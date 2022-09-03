@@ -10,9 +10,9 @@ interface IButtonSpinner {
 }
 const Buttonspinner: React.FC<IButtonSpinner> = ({ isLoading }) => {
     return (
-        <div className="event-button-spinner">
+        <div className="event-button-spinner position-relative">
             <Button
-                className="w-100 d-block mt-5 position-relative event-button-spinner__button"
+                className="w-100 d-block mt-4 position-relative event-button-spinner__button"
                 variant="success"
                 type="submit"
                 disabled={isLoading}
@@ -33,8 +33,8 @@ const Buttonspinner: React.FC<IButtonSpinner> = ({ isLoading }) => {
                     </div>
                 ) : null}
             </Button>
-            <EventFormErrorMessage />
-            <EventFormSuccessMessage />
+            <EventFormErrorMessage className="event-button-spinner__message" />
+            <EventFormSuccessMessage className="event-button-spinner__message" />
         </div>
     )
 }

@@ -78,7 +78,10 @@ const EventForm: React.FC = () => {
             onSubmit={handleSubmit(onSubmit)}
             className="m-auto event-form px-4  py-5 rounded border border-secondary"
         >
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group
+                className="event-form__input-wrapper mb-0"
+                controlId="formBasicEmail"
+            >
                 <Form.Label>Email address</Form.Label>
                 <Controller
                     name="email"
@@ -97,7 +100,10 @@ const EventForm: React.FC = () => {
                 />
                 <EventInputError message={emailError?.message} />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group
+                className="event-form__input-wrapper mb-0"
+                controlId="formBasicPassword"
+            >
                 <Form.Label>Event Name</Form.Label>
                 <Controller
                     name="name"
@@ -116,7 +122,10 @@ const EventForm: React.FC = () => {
                 />
                 <EventInputError message={nameError?.message} />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group
+                className="event-form__input-wrapper mb-0"
+                controlId="formBasicPassword"
+            >
                 <Form.Label>Event Date</Form.Label>
                 <Controller
                     name="date"
