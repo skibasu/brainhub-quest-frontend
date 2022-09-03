@@ -1,4 +1,5 @@
 # Env file
+
 Before you run the app, change file name '.envSample' to '.env' and paste your api url
 
 # Getting Started with Create React App
